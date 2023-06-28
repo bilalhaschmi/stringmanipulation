@@ -37,7 +37,7 @@ func TestUpAndDown(t *testing.T) {
 	inputString := "hello world"
 	expectedString := "HeLlO wOrLd"
 
-	result := UpAndDown(inputString)
+	result := AlternateCase(inputString)
 
 	if result != expectedString {
 		t.Errorf("UpAndDown(%s) = %s, expectedString %s", inputString, result, expectedString)
