@@ -3,13 +3,13 @@ package main
 import "testing"
 
 func TestToUppercase(t *testing.T) {
-	inputString := "hello world"
+	allLowerCaseString := "hello world"
 	expected := "HELLO WORLD"
 
-	result := ToUppercase(inputString)
+	result := ToUppercase(allLowerCaseString)
 
 	if result != expected {
-		t.Errorf("ToUppercase (%s) = %s, expected %s", inputString, result, expected)
+		t.Errorf("ToUppercase (%s) = %s, expected %s", allLowerCaseString, result, expected)
 	}
 
 	emptyString := ""
@@ -19,6 +19,24 @@ func TestToUppercase(t *testing.T) {
 
 	if resultEmpty != expectedEmpty {
 		t.Errorf("ToUppercase(%s) = %s, expected %s", emptyString, resultEmpty, expectedEmpty)
+	}
+
+	mixedCaseString := "Hello World"
+	expectedMixedCase := "HELLO WORLD"
+
+	resultMixedCase := ToUppercase(mixedCaseString)
+
+	if resultMixedCase != expectedMixedCase {
+		t.Errorf("ToUppercase(%s) = %s, expectedMixedCase %s", mixedCaseString, resultMixedCase, expectedMixedCase)
+	}
+
+	uppercaseString := "HELLO WORLD"
+	expectedUppercaseString := "HELLO WORLD"
+
+	resultUppercaseString := "HELLO WORLD"
+
+	if resultUppercaseString != expectedUppercaseString {
+		t.Errorf("ToUppercase(%s) = %s, expectedUppercaseString %s", uppercaseString, resultUppercaseString, expectedUppercaseString)
 	}
 }
 
