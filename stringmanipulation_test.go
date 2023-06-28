@@ -61,3 +61,15 @@ func TestUpAndDown(t *testing.T) {
 		t.Errorf("UpAndDown(%s) = %s, expectedString %s", inputString, result, expectedString)
 	}
 }
+
+func TestReverseString(t *testing.T) {
+	inputString := "Golang is fun"
+	expectedString := "nuf si gnaloG"
+
+	result := ReverseString(inputString)
+
+	if result != expectedString {
+		t.Errorf("ReverseString(%s) = %s, expectedString %s", inputString, result, expectedString)
+	}
+
+}

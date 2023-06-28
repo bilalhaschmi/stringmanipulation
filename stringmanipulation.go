@@ -6,6 +6,12 @@ import (
 	"unicode"
 )
 
+func main() {
+	input := "Hello World"
+	result := AlternateCase(input)
+	fmt.Println(result) // Output: HeLlO wOrLd
+}
+
 func ToUppercase(input string) string {
 	return strings.ToUpper(input)
 }
@@ -34,8 +40,14 @@ func AlternateCase(input string) string {
 	return result
 }
 
-func main() {
-	input := "Hello World"
-	result := AlternateCase(input)
-	fmt.Println(result) // Output: HeLlO wOrLd
+func ReverseString(input string) string {
+	bytes := []byte(input)
+
+	for i, j := 0, len(bytes)-1; i < j; i, j = i+1, j-1 {
+		bytes[i], bytes[j] = bytes[j], bytes[i]
+	}
+
+	reversed := string(bytes)
+
+	return reversed
 }
