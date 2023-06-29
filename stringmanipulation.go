@@ -51,3 +51,23 @@ func ReverseString(input string) string {
 
 	return reversed
 }
+
+func IsPalindrome(input string) bool {
+	sanitized := sanitizeString(input)
+
+	reversed := ReverseString(sanitized)
+
+	return sanitized == reversed
+}
+
+func sanitizeString(input string) string {
+	var sanitized strings.Builder
+
+	for _, char := range input {
+		if unicode.IsLetter(char) || unicode.IsDigit(char) {
+			sanitized.WriteRune(unicode.ToLower(char))
+		}
+	}
+
+	return sanitized.String()
+}
