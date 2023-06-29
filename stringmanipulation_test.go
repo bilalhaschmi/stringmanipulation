@@ -73,3 +73,25 @@ func TestReverseString(t *testing.T) {
 	}
 
 }
+
+func TestIsPalindrome(t *testing.T) {
+	testCases := []struct {
+		input    string
+		expected bool
+	}{
+		{"", true},
+		{"racecar", true},
+		{"hello", false},
+		{"A man, a plan, a canal: Panama", true},
+		{"12321", true},
+		{"12345", false},
+	}
+
+	for _, testCase := range testCases {
+		result := IsPalindrome(testCase.input)
+
+		if result != testCase.expected {
+			t.Errorf("IsPalindrome(%s) = %t, expected %t", testCase.input, result, testCase.expected)
+		}
+	}
+}
