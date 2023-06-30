@@ -95,3 +95,15 @@ func TestIsPalindrome(t *testing.T) {
 		}
 	}
 }
+
+func TestCountWords(t *testing.T) {
+	input := "This is a sample sentence"
+	expected := 5
+
+	result := CountWords(input)
+
+	if result != expected {
+		t.Errorf("CountWords(%s) = %d, expected %d", input, result, expected)
+	}
+
+}

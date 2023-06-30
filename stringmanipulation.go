@@ -71,3 +71,9 @@ func sanitizeString(input string) string {
 
 	return sanitized.String()
 }
+
+func CountWords(input string) int {
+	words := strings.Fields(input)
+
+	return len(words)
+}
