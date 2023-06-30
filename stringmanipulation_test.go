@@ -107,3 +107,33 @@ func TestCountWords(t *testing.T) {
 	}
 
 }
+
+func TestRemoveDuplicates(t *testing.T) {
+	inputWithDuplicate := "hello"
+	expectedWithDuplicate := "helo"
+
+	resultWithDuplicate := RemoveDuplicates(inputWithDuplicate)
+
+	if resultWithDuplicate != expectedWithDuplicate {
+		t.Errorf("RemoveDuplicate(%s) = %s, expected %s", inputWithDuplicate, resultWithDuplicate, expectedWithDuplicate)
+	}
+
+	inputEmptyString := ""
+	expectedEmptyString := ""
+
+	resultWithEmptyString := RemoveDuplicates(inputEmptyString)
+
+	if resultWithEmptyString != expectedEmptyString {
+		t.Errorf("RemoveDuplicate(%s) = %s, expected %s", inputEmptyString, resultWithEmptyString, expectedEmptyString)
+	}
+
+	inputWihoutDuplicate := "go"
+	expectedWithoutDuplicate := "go"
+
+	resultWithoutDuplicate := RemoveDuplicates(inputWihoutDuplicate)
+
+	if resultWithoutDuplicate != expectedWithoutDuplicate {
+		t.Errorf("RemoveDuplicate(%s) = %s, expected %s", inputWihoutDuplicate, resultWithoutDuplicate, expectedWithoutDuplicate)
+
+	}
+}

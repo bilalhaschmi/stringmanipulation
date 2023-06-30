@@ -77,3 +77,16 @@ func CountWords(input string) int {
 
 	return len(words)
 }
+
+func RemoveDuplicates(input string) string {
+	result := ""
+	visited := make(map[rune]bool)
+
+	for _, char := range input {
+		if !visited[char] {
+			result += string(char)
+			visited[char] = true
+		}
+	}
+	return result
+}
